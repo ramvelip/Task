@@ -1,0 +1,72 @@
+<!--Navigation Menu -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<a class="navbar-brand" href="#">Task Application</a>
+</nav>
+
+<div class="container-fluid bt-task">
+<a routerLink="task" class="btn btn-info" role="button"> Create New Task</a>
+</div>  
+
+<!-- List of tasks -->
+<ul class="list-group list-group-flush">
+<div class="container listask">
+<h5 class="text-center">List Of Tasks </h5>
+</div>  
+<li  class="list-group-item">
+<div class="row">
+<div class="col-md-1">
+<strong>#</strong> 
+</div>
+<div class="col-md-2">
+<strong>Task Name</strong>
+</div>
+<div class="col-md-2">
+<strong>Status</strong>
+</div>
+<div class="col-md-2">
+<strong>Completion Date</strong>
+</div>
+<div class="col-md-3">
+<strong>Description</strong>
+</div>
+<div class="col-md-2 text-center">
+<strong>Action</strong>
+</div>          
+</div>
+</li>
+<li  *ngFor = "let task of tasks" class="list-group-item">
+<div class="row">
+<div class="col-md-1">
+{{task.id}}
+</div>
+<div class="col-md-2">
+{{task.name}}
+</div>
+<div class="col-md-2">
+{{task.status}}
+</div>
+<div class="col-md-2">
+{{task.date}}
+</div>
+<div class="col-md-3">
+{{task.description}}
+</div>
+<div class="col-md-1 text-right">         
+<div [routerLink]="['/updateTask',task.id]" ><a class="s-size color-blue">UPDATE</a></div>
+</div>
+<div class="col-md-1 text-right">
+<div (click)="deleteTask(task.id)"><a class="s-size color-danger">DELETE</a></div>
+</div>
+</div>
+</li>
+</ul>
+
+<!-- Footer -->
+<footer>
+<div class="row" >
+<div class="col-xs-12 col-md-12 col-lg-12 text-center">
+<p class="text-center footer">
+Copyright © 2018 - 2019 <span class="test">Test Website.</span> All Rights Reserved</p>
+</div>
+</div>
+</footer>

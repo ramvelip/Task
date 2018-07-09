@@ -1,0 +1,51 @@
+.bg-dark 
+{
+    background-color:#4b96e6 !important;
+}
+a.color-danger
+ {
+    color: #d0021b!important;
+}
+a.color-blue 
+{
+    color: #4b96e6!important;
+}
+a.s-size
+{
+    font-size:12px!important;
+}
+.bt-task .btn-info 
+{
+    background-color: #4b96e6!important;
+}
+.bt-task .btn-info:hover 
+{
+    background-color: #4b96e6!important;
+}
+.bt-task
+{
+    margin:20px;
+}
+.listask
+{
+    background-color:#4b96e6; 
+    color:white;  
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom: 15px;
+    border-radius:2px;
+    padding-top:7px!important;
+}
+.footer
+{
+	background-color:#4b96e6;
+	padding:15px;
+	margin-top:500px;
+	color:white;
+	font-weight:bold;
+    font-size:18px;  
+}
+.test
+{ 
+    color:#bb0f20;
+}

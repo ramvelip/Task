@@ -1,0 +1,84 @@
+<!--Navigation Menu -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<a class="navbar-brand" href="#">Task Application</a>
+</nav>
+     
+<!-- Add Task Form Layout -->
+<div class="container">
+<h4 class="addtask">Add New Task</h4>            
+<form id="formNewTask" name="formNewTask" #taskData = "ngForm" (ngSubmit) = "addNewTask(taskData.value)" >
+<div class="form-group">
+<label class="col-md-3 s-size" >Enter Task Name :</label>
+<div class="col-md-9">
+<input type = "text" name = "name" id = "name" placeholder = "Enter Task Name" #name="ngModel" ngModel  class="form-control" required >
+<div *ngIf="name.invalid"
+class="alert alert-danger"> 
+<div *ngIf="name.errors.required">
+<div class="s-size">Name is required.</div>
+</div>
+</div>   
+</div>
+</div>  
+<div class="form-group">
+<label class="col-md-3 s-size" >Enter Task Status :</label>
+<div class="col-md-9">
+<select  name = "status" class="form-control" #status="ngModel" ngModel required>
+<option value="">Select Status</option>
+<option value="In-Progress">In-Progress</option>
+<option value="Open">Open</option>
+<option value="Closed">Closed</option> 
+</select>
+<div *ngIf="status.invalid"
+class="alert alert-danger"> 
+<div *ngIf="status.errors.required">
+<div class="s-size">Status is required.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-3 s-size" >Enter Task Description :</label>
+<div class="col-md-9">
+<input type = "text" name = "description" id = "description" placeholder = "Enter Task Description"  ngModel class="form-control" >      
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-3 s-size" >Enter Task Completion Date :</label>
+<div class="col-md-9">
+<input type = "text" name = "date" id = "date" placeholder = "mm/dd/yyyy" #date="ngModel" ngModel class="form-control" required>
+<div *ngIf="date.invalid"
+class="alert alert-danger"> 
+<div *ngIf="date.errors.required">
+<div class="s-size">Completion Date is required.</div>
+</div>
+</div> 
+</div>
+</div>
+<div class="row">    
+<div  class="col-md-offset-2 col-md-10 text-center">
+<h6 *ngIf ="isAdded">{{confirmationString}}</h6> 
+</div>
+</div>
+<div class="row">    
+<div class="col-md-offset-2 col-md-10 text-center  bt-task">
+<input type = "submit" value = "Add"  class="btn btn-info" role="button" >
+<input type = "reset" value = "Reset"  class="btn btn-info reset-color" role="button" >
+</div>
+</div>    
+</form>
+<div class="row">                           
+<div class="col-md-offset-2 col-md-10 text-left  bt-task" >
+<a routerLink="/" class="btn btn-info" role="button"> Cancel</a>
+</div>  
+</div> 
+</div>
+
+ <!-- Footer -->             
+<footer>
+<div class="row" >
+<div class="col-xs-12 col-md-12 col-lg-12 text-center">
+<p class="text-center footer">
+Copyright © 2018 - 2019 <span class="test">Test Website.</span> All Rights Reserved</p>
+</div>
+</div>
+</footer>

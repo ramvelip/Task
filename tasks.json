@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "name": "Answer ACAD Viva for project1 and project2",
+      "status": "In-Progress",
+      "description": "Call ACAD and inform date and time",
+      "date": "11/07/2017",
+      "id": 1
+    },
+    {
+      "name": "Link Aadhar to PAN",
+      "status": "Open",
+      "description": "Tell CA to link aadhar number to pan card",
+      "date": "07/07/2017",
+      "id": 2
+    },
+    {
+      "name": "Book Movie Ticket",
+      "status": "Closed",
+      "description": "Bahubali in inox",
+      "date": "01/06/2017",
+      "id": 3
+    }
+  ]
+}

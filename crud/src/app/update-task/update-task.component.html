@@ -1,0 +1,68 @@
+<!--Navigation Menu -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<a class="navbar-brand" href="#">Task Application</a>
+</nav>
+
+<!-- Update Task Form Layout -->
+<div class="container">
+<h4 class="addtask">Update Task</h4>
+<p *ngIf ="!exist">
+Task Does Not Exist
+</p>
+<form id="formNewTask" name="formNewTask" #taskData = "ngForm" (ngSubmit) = "updateTask(taskData.value)" >
+<div class="form-group">
+<label class="col-md-3 s-size" >Task Name :</label>
+<div class="col-md-9">
+<input type = "text" name = "name" id = "name" [(ngModel)]="data.name" ngModel class="form-control">
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-3 s-size" >Task Status :</label>
+<div class="col-md-9">
+<select  name = "status"[(ngModel)]="data.status" class="form-control"  ngModel >
+<option value="">Select Status</option>
+<option value="In-Progress">In-Progress</option>
+<option value="Open">Open</option>
+<option value="Closed">Closed</option> 
+</select>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-3 s-size" >Task Description :</label>
+<div class="col-md-9">
+<input type = "text" name = "description" id = "description" [(ngModel)]="data.description" ngModel class="form-control">
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-3 s-size" >Task Completion Date :</label>
+<div class="col-md-9">
+<input type = "text" name = "date" id = "date"  [(ngModel)]="data.date" ngModel class="form-control">
+</div>
+</div>
+<div class="row">    
+<div class="col-md-offset-2 col-md-10 text-center bt-task">
+<input type = "submit" value = "Update"  class="btn btn-info" role="button" >
+</div>
+</div>
+</form>
+<div class="row">    
+<div class="col-md-12 text-center">
+<h4 *ngIf ="isUpdated">{{confirmationString}}</h4> 
+</div>
+</div>
+<div class="row">                           
+<div class="col-md-offset-2 col-md-10 text-left  bt-task" >
+<a routerLink="/" class="btn btn-info" role="button"> Cancel</a>
+</div>  
+</div> 
+</div>
+
+<!-- Footer -->
+<footer>
+<div class="row" >
+<div class="col-xs-12 col-md-12 col-lg-12 text-center">
+<p class="text-center footer">
+ Copyright © 2018 - 2019 <span class="test">Test Website.</span> All Rights Reserved</p>
+</div>
+</div>
+</footer>
